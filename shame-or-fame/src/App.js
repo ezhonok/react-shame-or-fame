@@ -1,24 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Route, Switch } from 'react-router-dom'
+import PostContainer from './PostContainer'
+import Login from './Login'
+import GoogleApiWrapper from './MapContainer'
+
+console.log(process.env)
+
+const My404 = () => {
+	return (
+		<div>
+			404 Error
+		</div>
+		)	
+}
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+	  <div className="mapContainer">
+	    	<GoogleApiWrapper/>
+	    </div>
+      <Switch>
+      	<Route exact path="/" component={ Login } />
+      	<Route exact path="/posts" component={ PostContainer } />
+      	<Route component={My404} />
+      </Switch>
     </div>
   );
 }
