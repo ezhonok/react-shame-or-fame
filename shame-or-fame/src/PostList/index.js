@@ -3,12 +3,14 @@ import React from 'react'
 
 const Posts = (props) => {
 	const PostList = props.posts.map((post) => {
+				console.log(post)
 		return (
-
 			<li key={post._id}>
-				
-				<p>{post.title}</p>
-				<p>{post.description}</p>
+				<p>Reported by: {post.user[0].username}</p>
+				<p>What happened: {post.title}</p>
+				<p>Incident description: {post.description}</p>
+
+
 				<button
 				onClick={props.deletePost.bind(null, post._id)}
 				>Delete Post</button>

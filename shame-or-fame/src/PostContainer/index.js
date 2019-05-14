@@ -15,8 +15,7 @@ class PostContainer extends Component {
         _id: null,
         title: '',
         description: '',
-        img: '',
-        date: ''
+       
       },
 
       modalShowing: false
@@ -31,7 +30,7 @@ class PostContainer extends Component {
   getPosts = async () => {
 
     try {
-      const response = await fetch('http://localhost:9000/api/posts');
+      const response = await fetch(process.env.REACT_APP_BACKEND_URL +'/api/posts');
 
 	      if(response.status !== 200){
 	        throw Error(response.statusText);
@@ -53,7 +52,7 @@ class PostContainer extends Component {
     console.log(post)
 
     try {
-      const createdPost = await fetch('http://localhost:9000/api/posts', {
+      const createdPost = await fetch(process.env.REACT_APP_BACKEND_URL + '/api/posts', {
         method: 'POST',
         body: JSON.stringify(post),
         headers: {
@@ -76,7 +75,7 @@ class PostContainer extends Component {
 
     try {
 
-      const editResponse = await fetch('http://localhost:9000/api/posts/:id' + this.state.postToEdit._id, {
+      const editResponse = await fetch(process.env.REACT_APP_BACKEND_URL + '/api/posts/:id' + this.state.postToEdit._id, {
         method: 'PUT',
         body: JSON.stringify(this.state.postToEdit),
         headers: {
@@ -132,7 +131,7 @@ class PostContainer extends Component {
     console.log(id, ' post id in PostContainer delete post')
     e.preventDefault();
     try {
-        const deletePost = await fetch('http://localhost:9000/api/posts' + id, {
+        const deletePost = await fetch(process.env.REACT_APP_BACKEND_URL + '/api/posts' + id, {
           method: 'DELETE'
         });
         console.log('inside try')

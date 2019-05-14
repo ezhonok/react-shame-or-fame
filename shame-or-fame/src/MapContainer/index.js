@@ -10,7 +10,8 @@ const style = {
 export class MapContainer extends Component {
 	render() {
 		return (
-			<Map google={this.props.google} style={style} zoom={14}>
+			<Map google={this.props.google} style={style} zoom={14} 
+		        >
 				
 				<Marker onClick={this.onMarkerClick}
 					name={'Current location'} />
@@ -25,5 +26,5 @@ export class MapContainer extends Component {
 }
 
 export default GoogleApiWrapper({
-	apiKey: process.env.API_KEY
+	apiKey: process.env.REACT_APP_API_KEY
 }) (MapContainer)

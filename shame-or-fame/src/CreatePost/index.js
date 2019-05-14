@@ -8,7 +8,7 @@ class CreatePost extends Component {
 		this.state = {
 			title: '',
 			description: '',
-			img: '' //obv not a string - FIGURE IT OUT!
+			img: '' 
 		}
 	}
 	updatePost = (e) => {

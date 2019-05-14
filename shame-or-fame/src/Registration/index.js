@@ -1,29 +1,26 @@
 import React, { Component } from 'react';
-import GoogleApiWrapper from '../MapContainer'
-import { Link } from 'react-router-dom'
 
-class Login extends Component {
+
+class Register extends Component {
   constructor(){
     super();
 
     this.state = {
       username: '',
-      password: '',
+      password: ''
     }
-    
   }
 
   handleChange = (e) => {
     this.setState({[e.target.name]: e.target.value});
   }
 
-
   handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
 
-      const loginResponse = await fetch(process.env.REACT_APP_BACKEND_URL + '/auth/login', {
+      const regResponse = await fetch(process.env.REACT_APP_BACKEND_URL + '/auth/register', {
         method: 'POST',
         credentials: 'include',
         body: JSON.stringify(this.state),
@@ -32,9 +29,9 @@ class Login extends Component {
         }
       })
 
-      const parsedResponse = await loginResponse.json();
+      const parsedResponse = await regResponse.json();
 
-      if(parsedResponse.data === 'login successful'){
+      if(parsedResponse.data === 'registration successful'){
         this.props.history.push('/posts')
       }
 
@@ -57,11 +54,10 @@ class Login extends Component {
           type='password'
           name='password'
           onChange={this.handleChange}/>
-        <br/><br/><button>Login</button><br/>
-        <p>or</p><Link to="/register">Register Here</Link>
+        <br/><br/><button>Register</button>
       </form>
       )
   }
 }
 
-export default Login;
+export default Register;
