@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CreatePost from '../CreatePost';
 import Posts from '../PostList';
-import SimpleMap from '../MapContainer'
+
 
 class PostContainer extends Component {
 
@@ -40,19 +40,22 @@ class PostContainer extends Component {
   addPost = async (post, e) => {
 
     e.preventDefault();
-    console.log(post)
+    console.log("post: ", post)
 
     try {
       const createdPost = await fetch(process.env.REACT_APP_BACKEND_URL + '/api/posts', {
         method: 'POST',
         body: JSON.stringify(post),
+        credentials: 'include',
         headers: {
           'Content-Type': 'application/json'
         }
       });
 
+      console.log("raw response: ", createdPost)
+
       const parsedResponse = await createdPost.json();
-      console.log(parsedResponse)
+      console.log("parsed response: ", parsedResponse)
 
       this.setState({posts: [...this.state.posts, parsedResponse.data]})
 

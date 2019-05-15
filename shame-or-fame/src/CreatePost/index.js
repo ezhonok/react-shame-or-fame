@@ -8,7 +8,7 @@ class CreatePost extends Component {
 		this.state = {
 			title: '',
 			description: '',
-			
+			// img: '' 
 		}
 	}
 	updatePost = (e) => {
@@ -32,7 +32,7 @@ class CreatePost extends Component {
 					name="description"
 					onChange={this.updatePost}/>
 			</label><br/>
-	
+
 			<input type='Submit'/>
 			</form>
 			)
@@ -40,3 +40,13 @@ class CreatePost extends Component {
 }
 
  export default CreatePost
+
+
+
+ 		// 	<label><br/>
+			// 	Photo URL:
+			// 		<br/><input
+			// 		type="text"
+			// 		name="img"
+			// 		onChange={this.updatePost}/>	
+			// </label><br/><br/>

@@ -21,9 +21,7 @@ function App() {
 	console.log("process.env: ", process.env)
   return (
     <div>
-    <div className="mapContainer">
-    	<GoogleApiWrapper/>
-    </div>
+ 
       <Switch>
       	<Route exact path="/" component={ Login } />
       	<Route exact path="/register" component={ Register } />
@@ -35,3 +33,8 @@ function App() {
 }
 
 export default App;
+
+
+   // <div className="mapContainer">
+   //  	<GoogleApiWrapper/>
+   //  </div>
