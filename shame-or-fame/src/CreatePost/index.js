@@ -8,7 +8,7 @@ class CreatePost extends Component {
 		this.state = {
 			title: '',
 			description: '',
-			img: '' 
+			
 		}
 	}
 	updatePost = (e) => {
@@ -17,8 +17,7 @@ class CreatePost extends Component {
 	render(){
 		return (
 			<form
-				onSubmit={this.props.addPost.bind(null, this.state)}
-				action="/action_page.php">
+				onSubmit={this.props.addPost.bind(null, this.state)}>
 			<label>
 				Incident:
 					<br/><input 
@@ -33,13 +32,7 @@ class CreatePost extends Component {
 					name="description"
 					onChange={this.updatePost}/>
 			</label><br/>
-			<label><br/>
-				Photo:
-					<br/><input
-					type="file"
-					name="img"
-					accept="image/*"/>	
-			</label><br/><br/>
+	
 			<input type='Submit'/>
 			</form>
 			)

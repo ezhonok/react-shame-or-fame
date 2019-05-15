@@ -5,18 +5,13 @@ const Posts = (props) => {
 	const PostList = props.posts.map((post) => {
 				console.log(post)
 		return (
-			<li key={post._id}>
-				<p>Reported by: {post.user[0].username}</p>
+			<li >
+				
 				<p>What happened: {post.title}</p>
 				<p>Incident description: {post.description}</p>
 
 
-				<button
-				onClick={props.deletePost.bind(null, post._id)}
-				>Delete Post</button>
-				<button
-				onClick={props.showModal.bind(null, post)}
-				>Edit Post</button>
+			
 			</li>
 			)
 	}) 
@@ -32,3 +27,6 @@ const Posts = (props) => {
 
 
 export default Posts;
+
+
+//<p>Reported by: {post.user[0].username}</p> - figure this out
