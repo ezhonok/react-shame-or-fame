@@ -7,8 +7,10 @@ body {
 .mapContainer {
 /*  width: 600px;
   height: 600px;*/
-/*  padding-top: 20em; 
-*/  padding-left: 20em;
+  padding-right: 20em; 
+  padding-left: 20em;
+  margin-left: 20em;
+    width: 30%;
   /*background-color: lightblue;*/
 
 }
@@ -20,8 +22,8 @@ body {
   	margin: 20px;
   	border-radius: 10px;
   	border: solid 4px black;
-  	width: 80%;
-    height: 60%
+  	width: 600px;
+    height: 60%;
 }
 
 strong {
@@ -29,3 +31,12 @@ strong {
 	margin: -10px;
 }
 
+img {
+  border: solid 1px black;
+  width: 40%;
+    height: 40%;
+}
+
+Link {
+  text-decoration: none;
+}

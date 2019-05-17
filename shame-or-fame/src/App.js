@@ -3,8 +3,8 @@ import './App.css';
 import { Route, Switch } from 'react-router-dom'
 import PostContainer from './PostContainer'
 import Login from './Login'
-import GoogleApiWrapper from './MapContainer'
 import Register from './Registration'
+
 
 console.log(process.env)
 
@@ -21,7 +21,6 @@ function App() {
 	console.log("process.env: ", process.env)
   return (
     <div>
- 
       <Switch>
       	<Route exact path="/" component={ Login } />
       	<Route exact path="/register" component={ Register } />
@@ -33,8 +32,3 @@ function App() {
 }
 
 export default App;
-
-
-   // <div className="mapContainer">
-   //  	<GoogleApiWrapper/>
-   //  </div>
