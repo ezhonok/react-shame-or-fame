@@ -80,9 +80,10 @@ class PostContainer extends Component {
         body: JSON.stringify({
           title:post.title,
           description: post.description,
+          address: post.address,
           img: post.img,
           lat: this.state.lat,
-          lng: this.state.lng
+          lng: this.state.lng,
         }),
         credentials: 'include',
         headers: {

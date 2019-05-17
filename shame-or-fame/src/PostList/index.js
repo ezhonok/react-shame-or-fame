@@ -9,13 +9,14 @@ const Posts = (props) => {
 	console.log("props for posts: ", props)
 
 	const PostList = props.posts.map((post) => {
-				// console.log("one post: ", post)
+				console.log("one post: ", post)
 		return (
 			<li key={post._id}>
 
-
+				<p>Reported by: {post.user.username}</p>
 				<p>What happened: {post.title}</p>
 				<p>Incident description: {post.description}</p>
+				<p>Where did it happen? {post.address}</p>
 				<div>
 					<img src={post.img}/>
 				</div>

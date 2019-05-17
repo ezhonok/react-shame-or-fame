@@ -8,18 +8,12 @@ class CreatePost extends Component {
 
 		this.state = {
 			title: '',
-			description: ''//,
-			// lat: 0,//this.props.lat,
-			// lng: 0,//this.props.lng,
-			// img: '' 
+			description: '',
+			// address: ''
+	
 		}
 	}
-	// componentWillReceiveProps() {
-	// 	this.setState({
-	// 		lat: this.props.lat,
-	// 		lng: this.props.lng
-	// 	})
-	// }
+
 	updatePost = (e) => {
 		this.setState({[e.currentTarget.name]: e.currentTarget.value})
 	}
@@ -41,6 +35,13 @@ class CreatePost extends Component {
 					<br/><textarea
 					type="text"
 					name="description"
+					onChange={this.updatePost}/>
+			</label><br/>
+				<label><br/><br/>
+				Address:
+					<br/><textarea
+					type="text"
+					name="address"
 					onChange={this.updatePost}/>
 			</label><br/>
 

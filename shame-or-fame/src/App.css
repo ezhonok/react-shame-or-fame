@@ -7,23 +7,25 @@ body {
 .mapContainer {
 /*  width: 600px;
   height: 600px;*/
-  padding-right: 20em; 
-  padding-left: 20em;
-  margin-left: 20em;
+    padding-right: 20em; 
+    padding-left: 20em;
+    margin-left: 25em;
     width: 30%;
+    position: fixed;
   /*background-color: lightblue;*/
 
 }
 
 
 .listOfPosts {
-	background-color: plum;
-	padding: 1em; 
+  	background-color: plum;
+  	padding: 1em; 
   	margin: 20px;
   	border-radius: 10px;
-  	border: solid 4px black;
+  	border: solid 3px black;
   	width: 600px;
     height: 60%;
+    /*position: absolute;*/
 }
 
 strong {
