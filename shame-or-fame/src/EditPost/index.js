@@ -2,8 +2,8 @@ import React from 'react'
 
 const EditPost = (props) => {
 	return (
-		<div>
-			<strong> Edit Your Post </strong>
+		<div className="edit">
+			<strong> Edit Your Post </strong><br/><br/>
 			<form onSubmit={props.edit}>
 				<label>
 					Edit Title:
@@ -13,14 +13,14 @@ const EditPost = (props) => {
 					onChange={props.handleFormChange}
 					value={props.postToEdit.title}/>
 				</label>
-				<label><br/>
+				<label><br/><br/>
 					Edit Incident Description:
 					<br/><input 
 					type="text"
 					name="description"
 					onChange={props.handleFormChange}
 					value={props.postToEdit.description}/>
-				</label><br/>
+				</label><br/><br/>
 				<input type='Submit'/>
 				</form>
 		</div>
