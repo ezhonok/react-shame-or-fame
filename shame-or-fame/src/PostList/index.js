@@ -13,7 +13,7 @@ const Posts = (props) => {
 		return (
 			<li key={post._id}>
 
-				<p>Reported by: {post.user.username}</p>
+				
 				<p>What happened: {post.title}</p>
 				<p>Incident description: {post.description}</p>
 				<p>Where did it happen? {post.address}</p>

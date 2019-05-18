@@ -16,6 +16,8 @@ class PostContainer extends Component {
         _id: null,
         title: '',
         description: '',
+        address: '',
+
         lat: 0,
         lng: 0
       },
@@ -104,41 +106,12 @@ class PostContainer extends Component {
   }
 
 
-editPost = async (e) => {
-  e.preventDefault()
-
-  try {
-    const editRes = await fetch(process.env.REACT_APP_BACKEND_URL + '/api/posts' + this.state.postToEdit._id, {
-      method: 'PUT',
-      body: JSON.stringify(this.state.postToEdit),
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-
-    const parsedResponse = await editRes.json()
-
-    const editedPosts = this.state.posts.map((post) => {
-      if(post._id === this.state.postToEdit._id){
-        post = parsedResponse.data
-      }
-        return post
-    })
-
-    this.setState({
-      posts: editedPosts
-    })
-  }catch(err){
-    console.log(err);
-  }
-}
 
 edit = async (e) => {
    e.preventDefault()
 
    try {
-      const editRes = await fetch(process.env.REACT_APP_BACKEND_URL + this.state.postToEdit._id, {
+      const editRes = await fetch(process.env.REACT_APP_BACKEND_URL + '/api/posts/' + this.state.postToEdit._id, {
          method: 'PUT',
          body: JSON.stringify(this.state.postToEdit),
          headers: {

@@ -25,26 +25,29 @@ class CreatePost extends Component {
 				onSubmit={this.showCurrentLocation, this.props.addPost.bind(null, this.state)}>
 			<label>
 				Incident:
-					<br/><input 
+					<br/>
+					<input 
 					type="text" 
 					name="title" 
 					onChange={this.updatePost}/>
 			</label>
 			<label><br/><br/>
 				Description:
-					<br/><textarea
+					<br/>
+					<textarea
 					type="text"
 					name="description"
 					onChange={this.updatePost}/>
 			</label><br/>
-				<label><br/><br/>
-				Address:
-					<br/><textarea
+				<label><br/>
+				Location:
+					<br/>
+					<textarea
 					type="text"
 					name="address"
 					onChange={this.updatePost}/>
 			</label><br/>
-
+			
  			<label><br/>
 				Photo URL:
 					<br/><input
