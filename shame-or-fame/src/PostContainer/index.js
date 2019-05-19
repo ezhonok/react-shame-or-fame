@@ -33,6 +33,13 @@ class PostContainer extends Component {
   }
 
 
+
+
+
+//date - automatically recorded in the database
+//get the date from MongoDb to the post
+
+
   getPosts = async () => {
 
     try {

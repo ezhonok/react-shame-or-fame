@@ -3,6 +3,9 @@ body {
 	margin: 30px
 }
 
+p {
+  font-weight: bold;
+}
 
 .mapContainer {
 /*  width: 600px;
@@ -16,6 +19,9 @@ body {
 
 }
 
+ul {
+  list-style: none;
+}
 
 .listOfPosts {
   	background-color: plum;
@@ -28,9 +34,9 @@ body {
     /*position: absolute;*/
 }
 
-strong {
-	font-size: 22px;
-	margin: -10px;
+h1 {
+	font-size: 30px;
+	text-align: center;
 }
 
 img {

@@ -13,10 +13,11 @@ const Posts = (props) => {
 		return (
 			<li key={post._id}>
 
-				
-				<p>What happened: {post.title}</p>
-				<p>Incident description: {post.description}</p>
-				<p>Where did it happen? {post.address}</p>
+
+				<p>Incident:</p> {post.title}
+				<p>Incident description: </p>{post.description}
+				<p>Where did it happen? </p>{post.address}
+				<p>Date and time posted: </p>{post.date}<br/><br/>
 				<div>
 					<img src={post.img}/>
 				</div>
@@ -32,7 +33,7 @@ const Posts = (props) => {
 	return (
 		<div className="listOfPosts">
 			<ul>
-			<strong>Recent Happenings:</strong>
+			<h1>What's been happening</h1>
 				{PostList}
 			</ul>
 		</div>
